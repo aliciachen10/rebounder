@@ -1,40 +1,56 @@
-// import React, { Component } from "react";
-// import axios from "axios";
+// import { Alert, AlertIcon } from "@chakra-ui/alert"
+import React, { useEffect, useState } from "react"
+import { useInsertUserChatLogMutation } from "/@/graphql/generated/types"
 
+export const Post = ({ steps }) => {
+  const [insertChatLog, insertChatLogResult] = useInsertUserChatLogMutation()
 
-// class Post extends Component {
-//   constructor(props) {
-//     super(props);
-//     const { steps } = this.props;
-//     const { submit, firstname, lastname, email } = steps;
+  const [firstname, setFirstname] = useState(steps?.firstname.value || "")
+  const [lastname, setLastname] = useState(steps?.lastname.value || "")
+  const [submit, setSubmit] = useState(steps?.submit.value || "")
 
-//     this.state =  { submit, firstname, lastname, email }; 
-//     // console.log (submit, firstname, lastname, email)
-//   }
+  useEffect(() => {
+    setFirstname(steps?.firstname.value || "")
+  }, [steps?.firstname.value])
 
+  useEffect(() => {
+    setLastname(steps?.lastname.value || "")
+  }, [steps?.lastname.value])
 
-//   componentDidMount() {
-//     const userObject = {
-//       submit:this.state.submit.value,
-//       first_name:this.state.firstname.value,
-//       last_name:this.state.lastname.value,
-//       email:this.state.email.value,
-//     };
-//     console.log(userObject)
-//     axios.post(`/api`, userObject)
-//     .then(res => {
-//       console.log(res.status)
-//     }).catch(function(error) {
-//       console.log(error);
-//     });
-//   }
+  useEffect(() => {
+    setSubmit(steps?.submit.value || "")
+  }, [steps?.submit.value])
 
-//   render() {
-//     return (
-//       <div>Thank you! Your data was submitted successfully!</div>
-//       );
-//     }
-//   };
+  useEffect(() => {
+    if (submit !== "y") {
+      return
+    }
 
+    console.log("submitting", firstname, lastname)
+    insertChatLog({
+      variables: {
+        chat: {
+          firstname,
+          lastname
+        }
+      }
+    })
+  }, [insertChatLog, submit, firstname, lastname])
 
-//   export default Post;
+  if (insertChatLogResult.loading) {
+    return <div>Submitting...</div>
+  }
+
+  if (insertChatLogResult.error) {
+    return <div>Error: {`${insertChatLogResult.error}`} </div>
+  }
+
+  return (
+    // <Alert status="success">
+    //   <AlertIcon />
+    <>
+      Thank you! Your data was submitted successfully!
+    </>
+    // </Alert>
+  )
+}
