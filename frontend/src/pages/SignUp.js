@@ -2,8 +2,8 @@ import styles from '../styles/components/SignUp.module.css'
 import { useState } from 'react'
 import { useSignUpEmailPassword } from '@nhost/react'
 import { Link, Navigate } from 'react-router-dom'
-import Input from './Input'
-import Spinner from './Spinner'
+import Input from '../components/Input'
+import Spinner from '../components/Spinner'
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState('')
@@ -36,7 +36,7 @@ const SignUp = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles['logo-wrapper']}>
-          <img src={process.env.PUBLIC_URL + 'logo.svg'} alt="logo" />
+          <img src={process.env.PUBLIC_URL + 'rebound-small.png'} alt="logo" />
         </div>
 
         {needsEmailVerification ? (

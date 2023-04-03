@@ -7,6 +7,8 @@ import SignIn from './pages/SignIn';
 import Dashboard from './pages/Dashboard';
 import Profile from './pages/Profile';
 import { NhostClient, NhostProvider } from '@nhost/react'
+import { NhostApolloProvider } from '@nhost/react-apollo'
+import ProtectedRoute from './components/ProtectedRoute'
 
 const nhost = new NhostClient({
   subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
@@ -17,6 +19,7 @@ function App() {
   return (
     <>
     <NhostProvider nhost={nhost}>
+    <NhostApolloProvider nhost={nhost}>
       <BrowserRouter>
         <Routes>
           <Route path="sign-up" element={<SignUp />} />
@@ -27,6 +30,7 @@ function App() {
           </Route>
         </Routes>
       </BrowserRouter>
+      </NhostApolloProvider>
     </NhostProvider>
 
       <Toaster />

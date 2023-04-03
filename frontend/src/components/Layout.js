@@ -45,7 +45,7 @@ const Layout = () => {
       <header className={styles.header}>
         <div className={styles['header-container']}>
           <Link to="/">
-            <img src={process.env.PUBLIC_URL + 'logo.svg'} alt="logo" />
+            <img src={process.env.PUBLIC_URL + 'rebound-small.png'} alt="logo" height="40"/>
           </Link>
 
           <Menu as="div" className={styles.menu}>

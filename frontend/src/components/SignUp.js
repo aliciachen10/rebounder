@@ -18,7 +18,7 @@ const SignUp = () => {
     <div className={styles.container}>
       <div className={styles.card}>
         <div className={styles['logo-wrapper']}>
-          <img src={process.env.PUBLIC_URL + 'logo.svg'} alt="logo" />
+          <img src={process.env.PUBLIC_URL + 'rebound-small.png'} alt="logo"/>
         </div>
 
         <form onSubmit={handleOnSubmit} className={styles.form}>

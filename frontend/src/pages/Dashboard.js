@@ -2,6 +2,7 @@ import styles from '../styles/pages/Dashboard.module.css';
 
 import { useOutletContext } from 'react-router-dom';
 import { Helmet } from 'react-helmet';
+import SimpleForm from '../components/chatbot/SimpleForm'
 
 const Dashboard = () => {
   const { user } = useOutletContext();
@@ -21,11 +22,12 @@ const Dashboard = () => {
             👋
           </span>
         </p>
+        <SimpleForm />
 
-        <p className={styles['info-text']}>
+        {/* <p className={styles['info-text']}>
           Edit the <code>src/pages/Dashboard.js</code> file to populate this
           page.
-        </p>
+        </p> */}
       </div>
     </>
   );
