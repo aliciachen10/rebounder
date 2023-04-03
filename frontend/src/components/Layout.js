@@ -19,11 +19,6 @@ const Layout = () => {
 
   const menuItems = [
     {
-      label: 'Logout',
-      onClick: signOut,
-      icon: LogoutIcon
-    },
-    {
       label: 'Dashboard',
       href: '/',
       icon: HomeIcon,
@@ -35,7 +30,7 @@ const Layout = () => {
     },
     {
       label: 'Logout',
-      onClick: () => null,
+      onClick: () => signOut,
       icon: LogoutIcon,
     },
   ];

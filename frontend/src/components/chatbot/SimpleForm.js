@@ -63,7 +63,7 @@ class SimpleForm extends Component {
           {
             id: "begin-options",
             options: [
-              {value:1, label:"Assess the severity of my symptoms", end: true}, //trigger: "pcl-5"
+              {value: 1, label:"Assess the severity of my symptoms", trigger: "pcl-5"}, //trigger: "pcl-5"
               {value: 2, label:"Learn why I should trust you ", trigger: "science"}, //trigger: "science"
               {value: 3, label: "Learn how to calm myself during periods of anxiety or panic", trigger: "grounding"}, //trigger: "grounding"
               {value: 4, label: "Get started reprocessing experiences in an evidence-based fashion", trigger: "reprocessing-0"} //trigger: "reprocessing"
@@ -306,28 +306,338 @@ class SimpleForm extends Component {
 
 
 
-          // {
-          //   id: "pcl-5",
-          //   value: "Thanks for mentioning that. We'll walk you through a 20-question survey that will help you understand how severe your symptoms are and whether you may qualify for a diagnosis of PTSD. Note that this is not medical advice and to get a real diagnosis, you'll have to see a provider. We use a questionnaire that has been validated in the trauma research literature by clinical psychologists. Are you ready?",
-          //   trigger: "q1"
-          // },
-          // {
-          //   id: "q1",
-          //   value: "Repeated, disturbing, and unwanted memories of the stressful experience(s)?",
-          //   trigger: "a1",
-          // },
-          // answers[0],
-          // {
-          //   id: "q2",
-          //   value: "Repeated, disturbing, and unwanted memories of the stressful experience(s)?",
-          //   trigger: "a2"
-          // },
-          // answers[1],
-          // {
-          //   id: "q3",
-          //   value: "last sample question",
-          //   trigger: "next"
-          // },
+          {
+            id: "pcl-5",
+            message: "Thanks for mentioning that. We'll walk you through a 20-question survey that will help you understand how severe your symptoms are and whether you may qualify for a diagnosis of PTSD. Note that this is not medical advice and to get a real diagnosis, you'll have to see a provider. We use a questionnaire that has been validated in the trauma research literature by clinical psychologists. Are you ready?",
+            trigger: "assess-ready-for-pcl-5"
+          },
+          {
+            id: "assess-ready-for-pcl-5",
+            message: "are you ready?",
+            trigger: "pcl-5-readiness"
+          },
+          {
+            id: "pcl-5-readiness",
+            options: [
+              {value: 1, label: "Yes", trigger: "questionnaire-pre"},
+              {value: 2, label: "No, take me back", trigger: "next"}
+            ]
+          },
+          {
+            id: "questionnaire-pre",
+            message: `Below is a list of problems that people sometimes have in response to a very stressful experience.
+            Please read each problem and then select one of the options to indicate how much you have been bothered by
+            that problem in the past week.`,
+            trigger: "q1"
+
+          },
+          {
+            id: "q1",
+            message: "Repeated, disturbing, and unwanted memories of the stressful experience(s)?",
+            trigger: "a1",
+          },
+          {
+            id: "a1",
+            options: [
+                {value: 0, label: "not at all", trigger: "q2"},
+                {value: 1, label: "a little bit", trigger: "q2"},
+                {value: 2, label: "moderately", trigger: "q2"},
+                {value: 3, label: "quite a bit", trigger: "q2"},
+                {value: 4, label: "extremely", trigger: "q2"}
+            ]
+          },
+          {
+            id: "q2",
+            message: "Repeated, disturbing dreams of the stressful experience?",
+            // end: true,
+            trigger: "a2"
+          },
+          {
+            id: "a2",
+            options: [
+                {value: 0, label: "not at all", trigger: "q3"},
+                {value: 1, label: "a little bit", trigger: "q3"},
+                {value: 2, label: "moderately", trigger: "q3"},
+                {value: 3, label: "quite a bit", trigger: "q3"},
+                {value: 4, label: "extremely", trigger: "q3"}
+            ]
+          },
+          {
+            id: "q3",
+            message: `Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?`,
+            trigger: "a3"
+          },
+          {
+            id: "a3",
+            options: [
+                {value: 0, label: "not at all", trigger: "q4"},
+                {value: 1, label: "a little bit", trigger: "q4"},
+                {value: 2, label: "moderately", trigger: "q4"},
+                {value: 3, label: "quite a bit", trigger: "q4"},
+                {value: 4, label: "extremely", trigger: "q4"}
+            ]
+          },
+          {
+            id: "q4",
+            message: `Feeling very upset when something reminded you of the stressful experience?`,
+            trigger: "a4"
+          },
+          {
+            id: "a4",
+            options: [
+                {value: 0, label: "not at all", trigger: "q5"},
+                {value: 1, label: "a little bit", trigger: "q5"},
+                {value: 2, label: "moderately", trigger: "q5"},
+                {value: 3, label: "quite a bit", trigger: "q5"},
+                {value: 4, label: "extremely", trigger: "q5"}
+            ]
+          },
+          {
+            id: "q5",
+            message: `Having strong physical reactions when something reminded you of the stressful experience (for example, heart pounding, trouble breathing, sweating)?`,
+            trigger: "a5"
+          },
+          {
+            id: "a5",
+            options: [
+                {value: 0, label: "not at all", trigger: "q6"},
+                {value: 1, label: "a little bit", trigger: "q6"},
+                {value: 2, label: "moderately", trigger: "q6"},
+                {value: 3, label: "quite a bit", trigger: "q6"},
+                {value: 4, label: "extremely", trigger: "q6"}
+            ]
+          },
+          {
+            id: "q6",
+            message: `Avoiding memories, thoughts, or feelings related to the stressful experience?`,
+            trigger: "a6"
+          },
+          {
+            id: "a6",
+            options: [
+                {value: 0, label: "not at all", trigger: "q7"},
+                {value: 1, label: "a little bit", trigger: "q7"},
+                {value: 2, label: "moderately", trigger: "q7"},
+                {value: 3, label: "quite a bit", trigger: "q7"},
+                {value: 4, label: "extremely", trigger: "q7"}
+            ]
+          },
+          {
+            id: "q7",
+            message: `Avoiding external reminders of the stressful experience (for example, people, places, conversations, activities, objects, or situations)?`,
+            trigger: "a7"
+          },
+          {
+            id: "a7",
+            options: [
+                {value: 0, label: "not at all", trigger: "q8"},
+                {value: 1, label: "a little bit", trigger: "q8"},
+                {value: 2, label: "moderately", trigger: "q8"},
+                {value: 3, label: "quite a bit", trigger: "q8"},
+                {value: 4, label: "extremely", trigger: "q8"}
+            ]
+          },
+          {
+            id: "q8",
+            message: `Trouble remembering important parts of the stressful experience?`,
+            trigger: "a8"
+          },
+          {
+            id: "a8",
+            options: [
+                {value: 0, label: "not at all", trigger: "q9"},
+                {value: 1, label: "a little bit", trigger: "q9"},
+                {value: 2, label: "moderately", trigger: "q9"},
+                {value: 3, label: "quite a bit", trigger: "q9"},
+                {value: 4, label: "extremely", trigger: "q9"}
+            ]
+          },
+          {
+            id: "q9",
+            message: `Having strong negative beliefs about yourself, other people, or the world (for example, having thoughts such as: I am bad, there is something seriously wrong with me, no one can be trusted, the world is completely dangerous)?`,
+            trigger: "a9"
+          },
+          {
+            id: "a9",
+            options: [
+                {value: 0, label: "not at all", trigger: "q10"},
+                {value: 1, label: "a little bit", trigger: "q10"},
+                {value: 2, label: "moderately", trigger: "q10"},
+                {value: 3, label: "quite a bit", trigger: "q10"},
+                {value: 4, label: "extremely", trigger: "q10"}
+            ]
+          },
+          {
+            id: "q10",
+            message: `Blaming yourself or someone else for the stressful experience or what happened after it?`,
+            trigger: "a10"
+          },
+          {
+            id: "a10",
+            options: [
+                {value: 0, label: "not at all", trigger: "q11"},
+                {value: 1, label: "a little bit", trigger: "q11"},
+                {value: 2, label: "moderately", trigger: "q11"},
+                {value: 3, label: "quite a bit", trigger: "q11"},
+                {value: 4, label: "extremely", trigger: "q11"}
+            ]
+          },
+          {
+            id: "q11",
+            message: `Having strong negative feelings such as fear, horror, anger, guilt, or shame? `,
+            trigger: "a11"
+          },
+          {
+            id: "a11",
+            options: [
+                {value: 0, label: "not at all", trigger: "q12"},
+                {value: 1, label: "a little bit", trigger: "q12"},
+                {value: 2, label: "moderately", trigger: "q12"},
+                {value: 3, label: "quite a bit", trigger: "q12"},
+                {value: 4, label: "extremely", trigger: "q12"}
+            ]
+          },
+          {
+            id: "q12",
+            message: `Loss of interest in activities that you used to enjoy?`,
+            trigger: "a12"
+          },
+                    {
+            id: "a12",
+            options: [
+                {value: 0, label: "not at all", trigger: "q13"},
+                {value: 1, label: "a little bit", trigger: "q13"},
+                {value: 2, label: "moderately", trigger: "q13"},
+                {value: 3, label: "quite a bit", trigger: "q13"},
+                {value: 4, label: "extremely", trigger: "q13"}
+            ]
+          },
+          {
+            id: "q13",
+            message: `Feeling distant or cut off from other people?`,
+            trigger: "a13"
+          },
+          {
+            id: "a13",
+            options: [
+                {value: 0, label: "not at all", trigger: "q14"},
+                {value: 1, label: "a little bit", trigger: "q14"},
+                {value: 2, label: "moderately", trigger: "q14"},
+                {value: 3, label: "quite a bit", trigger: "q14"},
+                {value: 4, label: "extremely", trigger: "q14"}
+            ]
+          },
+          {
+            id: "q14",
+            message: `Trouble experiencing positive feelings (for example, being unable to feel happiness or have loving feelings for people close to you)?`,
+            trigger: "a14"
+          },
+          {
+            id: "a14",
+            options: [
+                {value: 0, label: "not at all", trigger: "q15"},
+                {value: 1, label: "a little bit", trigger: "q15"},
+                {value: 2, label: "moderately", trigger: "q15"},
+                {value: 3, label: "quite a bit", trigger: "q15"},
+                {value: 4, label: "extremely", trigger: "q15"}
+            ]
+          },
+          {
+            id: "q15",
+            message: `Irritable behavior, angry outbursts, or acting aggressively?`,
+            trigger: "a15"
+          },
+          {
+            id: "a15",
+            options: [
+                {value: 0, label: "not at all", trigger: "q16"},
+                {value: 1, label: "a little bit", trigger: "q16"},
+                {value: 2, label: "moderately", trigger: "q16"},
+                {value: 3, label: "quite a bit", trigger: "q16"},
+                {value: 4, label: "extremely", trigger: "q16"}
+            ]
+          },
+          {
+            id: "q16",
+            message: `Taking too many risks or doing things that could cause you harm?`,
+            trigger: "a16"
+          },
+        {
+            id: "a16",
+            options: [
+                {value: 0, label: "not at all", trigger: "q17"},
+                {value: 1, label: "a little bit", trigger: "q17"},
+                {value: 2, label: "moderately", trigger: "q17"},
+                {value: 3, label: "quite a bit", trigger: "q17"},
+                {value: 4, label: "extremely", trigger: "q17"}
+            ]
+          },
+          {
+            id: "q17",
+            message: `Being “superalert” or watchful or on guard?`,
+            trigger: "a17"
+          },
+          {
+            id: "a17",
+            options: [
+                {value: 0, label: "not at all", trigger: "q18"},
+                {value: 1, label: "a little bit", trigger: "q18"},
+                {value: 2, label: "moderately", trigger: "q18"},
+                {value: 3, label: "quite a bit", trigger: "q18"},
+                {value: 4, label: "extremely", trigger: "q18"}
+            ]
+          },
+          {
+            id: "q18",
+            message: `Feeling jumpy or easily startled?`,
+            trigger: "a18"
+          },
+          {
+            id: "a18",
+            options: [
+                {value: 0, label: "not at all", trigger: "q19"},
+                {value: 1, label: "a little bit", trigger: "q19"},
+                {value: 2, label: "moderately", trigger: "q19"},
+                {value: 3, label: "quite a bit", trigger: "q19"},
+                {value: 4, label: "extremely", trigger: "q19"}
+            ]
+          },
+          {
+            id: "q19",
+            message: `Having difficulty concentrating?`,
+            trigger: "a19"
+          },
+          {
+            id: "a19",
+            options: [
+                {value: 0, label: "not at all", trigger: "q20"},
+                {value: 1, label: "a little bit", trigger: "q20"},
+                {value: 2, label: "moderately", trigger: "q20"},
+                {value: 3, label: "quite a bit", trigger: "q20"},
+                {value: 4, label: "extremely", trigger: "q20"}
+            ]
+          },
+          {
+            id: "q20",
+            message: `Trouble falling or staying asleep?`,
+            trigger: "a20"
+          },
+          {
+            id: "a20",
+            options: [
+                {value: 0, label: "not at all", trigger: "pcl-5-thank-you"},
+                {value: 1, label: "a little bit", trigger: "pcl-5-thank-you"},
+                {value: 2, label: "moderately", trigger: "pcl-5-thank-you"},
+                {value: 3, label: "quite a bit", trigger: "pcl-5-thank-you"},
+                {value: 4, label: "extremely", trigger: "pcl-5-thank-you"}
+            ]
+          },
+          {
+            id: "pcl-5-thank-you",
+            message: "thank you - your score report will be emailed to you in the next 24 hours. We are working on an auto-score option right now.",
+            trigger: "next"
+
+          },
           {
             id: "next",
             message: "what would you like to do next?",

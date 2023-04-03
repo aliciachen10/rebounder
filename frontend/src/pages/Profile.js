@@ -51,7 +51,7 @@ const Profile = () => {
   return (
     <>
       <Helmet>
-        <title>Profile - Nhost</title>
+        <title>Profile - Rebound Health</title>
       </Helmet>
 
       <div className={styles.container}>

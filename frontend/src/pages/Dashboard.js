@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard - Nhost</title>
+        <title>Dashboard - Rebound Health</title>
       </Helmet>
 
       <div>
