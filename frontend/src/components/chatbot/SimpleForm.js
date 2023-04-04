@@ -60,7 +60,7 @@ class SimpleForm extends Component {
               {value: 2, label:"Learn why I should trust you ", trigger: "science"}, //trigger: "science"
               {value: 3, label: "Learn how to calm myself during periods of anxiety or panic", trigger: "grounding"}, //trigger: "grounding"
               {value: 4, label: "Get started reprocessing experiences in an evidence-based fashion", trigger: "reprocessing-0"}, //trigger: "reprocessing"
-              {value: 5, label: "test", trigger: "q-firstname"}
+            //   {value: 5, label: "test", trigger: "q-firstname"}
             ]
           },
           {
@@ -352,12 +352,12 @@ class SimpleForm extends Component {
                 {value: 2, label: "Moderately", trigger: "q3"},
                 {value: 3, label: "Quite a bit", trigger: "q3"},
                 {value: 4, label: "Extremely", trigger: "q3"}
-            ]
+            ],
           },
           {
             id: "q3",
             message: `Suddenly feeling or acting as if the stressful experience were actually happening again (as if you were actually back there reliving it)?`,
-            trigger: "a3"
+            trigger: "a3",
           },
           {
             id: "a3",
@@ -634,7 +634,9 @@ class SimpleForm extends Component {
         // },
           {
             id: "pcl-5-thank-you",
-            message: "thank you - your score report will be emailed to you in the next 24 hours. We are working on an auto-score option right now.",
+            component: <Post />,
+            asMessage: true, 
+            // message: "thank you - your score report will be emailed to you in the next 24 hours. We are working on an auto-score option right now.",
             trigger: "next"
 
           },
@@ -809,26 +811,26 @@ class SimpleForm extends Component {
             ]
           },
 
-          {
-            id:"q-firstname", 
-            message:"What is your first name?", 
-            trigger:"firstname",
-          },
-          {
-            id:"firstname", 
-            user: true,
-            trigger:"q-lastname"
-          },
-          {
-            id:"q-lastname", 
-            message:"What is your last name?", 
-            trigger:"lastname",
-          },
-          {
-            id:"lastname", 
-            user: true,
-            trigger:"q-submit"
-          },
+        //   {
+        //     id:"q-firstname", 
+        //     message:"What is your first name?", 
+        //     trigger:"firstname",
+        //   },
+        //   {
+        //     id:"firstname", 
+        //     user: true,
+        //     trigger:"q-lastname"
+        //   },
+        //   {
+        //     id:"q-lastname", 
+        //     message:"What is your last name?", 
+        //     trigger:"lastname",
+        //   },
+        //   {
+        //     id:"lastname", 
+        //     user: true,
+        //     trigger:"q-submit"
+        //   },
         //   {
         //     id:"q-email", 
         //     message:"Finally. what is your email?", 
@@ -839,29 +841,29 @@ class SimpleForm extends Component {
         //     user: true,
         //     trigger:"q-submit"
         //   },
-          {
-            id:"q-submit", 
-            message:"Do you wish to submit?", 
-            trigger:"submit"
-          },
-          {
-            id:"submit", 
-            options:[
-            {value:"y", label:"Yes", trigger:"end-message"},
-            {value:"n", label:"No", trigger:"no-submit"},
-            ] 
-          },
-          {
-                  id: "no-submit",
-                  message:"Your information was not submitted.", 
-                  end: true,
-               },
-                    {
-                  id: "end-message",
-                  component: <Post />,
-                  asMessage: true,
-                  end: true,
-               },
+        //   {
+        //     id:"q-submit", 
+        //     message:"Do you wish to submit?", 
+        //     trigger:"submit"
+        //   },
+        //   {
+        //     id:"submit", 
+        //     options:[
+        //     {value:"y", label:"Yes", trigger:"end-message"},
+        //     {value:"n", label:"No", trigger:"no-submit"},
+        //     ] 
+        //   },
+        //   {
+        //           id: "no-submit",
+        //           message:"Your information was not submitted.", 
+        //           end: true,
+        //        },
+        //             {
+        //           id: "end-message",
+        //           component: <Post />,
+        //           asMessage: true,
+        //           end: true,
+        //        },
         ]}
       />
         

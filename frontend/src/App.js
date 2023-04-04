@@ -9,12 +9,13 @@ import Profile from './pages/Profile';
 import { NhostClient, NhostProvider } from '@nhost/react'
 import { NhostApolloProvider } from '@nhost/react-apollo'
 import ProtectedRoute from './components/ProtectedRoute'
+import nhost from './nhostClient'
 
-const nhost = new NhostClient({
-  subdomain: "local"
-  // subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
-  // region: process.env.REACT_APP_NHOST_REGION
-})
+// const nhost = new NhostClient({
+//   subdomain: "local"
+//   // subdomain: process.env.REACT_APP_NHOST_SUBDOMAIN,
+//   // region: process.env.REACT_APP_NHOST_REGION
+// })
 
 function App() {
   return (
