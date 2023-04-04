@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import ChatBot from "react-simple-chatbot";
-// import Post from "./Post";
+import Post from "./Post";
 
   // function createQuestionVariables(){
   //   var questions = [];
@@ -40,13 +40,6 @@ import ChatBot from "react-simple-chatbot";
   // }
   
 class SimpleForm extends Component {
-
-
-  
-
-
-  
-
   // answers = createAnswerVariables()
   // questions = createQuestionVariables()
 
@@ -66,7 +59,8 @@ class SimpleForm extends Component {
               {value: 1, label:"Assess the severity of my symptoms", trigger: "pcl-5"}, //trigger: "pcl-5"
               {value: 2, label:"Learn why I should trust you ", trigger: "science"}, //trigger: "science"
               {value: 3, label: "Learn how to calm myself during periods of anxiety or panic", trigger: "grounding"}, //trigger: "grounding"
-              {value: 4, label: "Get started reprocessing experiences in an evidence-based fashion", trigger: "reprocessing-0"} //trigger: "reprocessing"
+              {value: 4, label: "Get started reprocessing experiences in an evidence-based fashion", trigger: "reprocessing-0"}, //trigger: "reprocessing"
+              {value: 5, label: "test", trigger: "q-firstname"}
             ]
           },
           {
@@ -154,9 +148,7 @@ class SimpleForm extends Component {
             options: [
               {value: 1, label: "Yes", trigger: "reprocessing-option-prompt"},
               {value: 2, label: "No", trigger: "wet-information"}
-            ],
-            trigger: "reprocessing-option-prompt"
-
+            ]
           },
           {
             id: "wet-information",
@@ -313,7 +305,7 @@ class SimpleForm extends Component {
           },
           {
             id: "assess-ready-for-pcl-5",
-            message: "are you ready?",
+            message: "Are you ready?",
             trigger: "pcl-5-readiness"
           },
           {
@@ -339,11 +331,11 @@ class SimpleForm extends Component {
           {
             id: "a1",
             options: [
-                {value: 0, label: "not at all", trigger: "q2"},
-                {value: 1, label: "a little bit", trigger: "q2"},
-                {value: 2, label: "moderately", trigger: "q2"},
-                {value: 3, label: "quite a bit", trigger: "q2"},
-                {value: 4, label: "extremely", trigger: "q2"}
+                {value: 0, label: "Not at all", trigger: "q2"},
+                {value: 1, label: "A little bit", trigger: "q2"},
+                {value: 2, label: "Moderately", trigger: "q2"},
+                {value: 3, label: "Quite a bit", trigger: "q2"},
+                {value: 4, label: "Extremely", trigger: "q2"}
             ]
           },
           {
@@ -355,11 +347,11 @@ class SimpleForm extends Component {
           {
             id: "a2",
             options: [
-                {value: 0, label: "not at all", trigger: "q3"},
-                {value: 1, label: "a little bit", trigger: "q3"},
-                {value: 2, label: "moderately", trigger: "q3"},
-                {value: 3, label: "quite a bit", trigger: "q3"},
-                {value: 4, label: "extremely", trigger: "q3"}
+                {value: 0, label: "Not at all", trigger: "q3"},
+                {value: 1, label: "A little bit", trigger: "q3"},
+                {value: 2, label: "Moderately", trigger: "q3"},
+                {value: 3, label: "Quite a bit", trigger: "q3"},
+                {value: 4, label: "Extremely", trigger: "q3"}
             ]
           },
           {
@@ -370,11 +362,11 @@ class SimpleForm extends Component {
           {
             id: "a3",
             options: [
-                {value: 0, label: "not at all", trigger: "q4"},
-                {value: 1, label: "a little bit", trigger: "q4"},
-                {value: 2, label: "moderately", trigger: "q4"},
-                {value: 3, label: "quite a bit", trigger: "q4"},
-                {value: 4, label: "extremely", trigger: "q4"}
+                {value: 0, label: "Not at all", trigger: "q4"},
+                {value: 1, label: "A little bit", trigger: "q4"},
+                {value: 2, label: "Moderately", trigger: "q4"},
+                {value: 3, label: "Quite a bit", trigger: "q4"},
+                {value: 4, label: "Extremely", trigger: "q4"}
             ]
           },
           {
@@ -385,11 +377,11 @@ class SimpleForm extends Component {
           {
             id: "a4",
             options: [
-                {value: 0, label: "not at all", trigger: "q5"},
-                {value: 1, label: "a little bit", trigger: "q5"},
-                {value: 2, label: "moderately", trigger: "q5"},
-                {value: 3, label: "quite a bit", trigger: "q5"},
-                {value: 4, label: "extremely", trigger: "q5"}
+                {value: 0, label: "Not at all", trigger: "q5"},
+                {value: 1, label: "A little bit", trigger: "q5"},
+                {value: 2, label: "Moderately", trigger: "q5"},
+                {value: 3, label: "Quite a bit", trigger: "q5"},
+                {value: 4, label: "Extremely", trigger: "q5"}
             ]
           },
           {
@@ -400,11 +392,11 @@ class SimpleForm extends Component {
           {
             id: "a5",
             options: [
-                {value: 0, label: "not at all", trigger: "q6"},
-                {value: 1, label: "a little bit", trigger: "q6"},
-                {value: 2, label: "moderately", trigger: "q6"},
-                {value: 3, label: "quite a bit", trigger: "q6"},
-                {value: 4, label: "extremely", trigger: "q6"}
+                {value: 0, label: "Not at all", trigger: "q6"},
+                {value: 1, label: "A little bit", trigger: "q6"},
+                {value: 2, label: "Moderately", trigger: "q6"},
+                {value: 3, label: "Quite a bit", trigger: "q6"},
+                {value: 4, label: "Extremely", trigger: "q6"}
             ]
           },
           {
@@ -415,11 +407,11 @@ class SimpleForm extends Component {
           {
             id: "a6",
             options: [
-                {value: 0, label: "not at all", trigger: "q7"},
-                {value: 1, label: "a little bit", trigger: "q7"},
-                {value: 2, label: "moderately", trigger: "q7"},
-                {value: 3, label: "quite a bit", trigger: "q7"},
-                {value: 4, label: "extremely", trigger: "q7"}
+                {value: 0, label: "Not at all", trigger: "q7"},
+                {value: 1, label: "A little bit", trigger: "q7"},
+                {value: 2, label: "Moderately", trigger: "q7"},
+                {value: 3, label: "Quite a bit", trigger: "q7"},
+                {value: 4, label: "Extremely", trigger: "q7"}
             ]
           },
           {
@@ -430,11 +422,11 @@ class SimpleForm extends Component {
           {
             id: "a7",
             options: [
-                {value: 0, label: "not at all", trigger: "q8"},
-                {value: 1, label: "a little bit", trigger: "q8"},
-                {value: 2, label: "moderately", trigger: "q8"},
-                {value: 3, label: "quite a bit", trigger: "q8"},
-                {value: 4, label: "extremely", trigger: "q8"}
+                {value: 0, label: "Not at all", trigger: "q8"},
+                {value: 1, label: "A little bit", trigger: "q8"},
+                {value: 2, label: "Moderately", trigger: "q8"},
+                {value: 3, label: "Quite a bit", trigger: "q8"},
+                {value: 4, label: "Extremely", trigger: "q8"}
             ]
           },
           {
@@ -445,11 +437,11 @@ class SimpleForm extends Component {
           {
             id: "a8",
             options: [
-                {value: 0, label: "not at all", trigger: "q9"},
-                {value: 1, label: "a little bit", trigger: "q9"},
-                {value: 2, label: "moderately", trigger: "q9"},
-                {value: 3, label: "quite a bit", trigger: "q9"},
-                {value: 4, label: "extremely", trigger: "q9"}
+                {value: 0, label: "Not at all", trigger: "q9"},
+                {value: 1, label: "A little bit", trigger: "q9"},
+                {value: 2, label: "Moderately", trigger: "q9"},
+                {value: 3, label: "Quite a bit", trigger: "q9"},
+                {value: 4, label: "Extremely", trigger: "q9"}
             ]
           },
           {
@@ -460,11 +452,11 @@ class SimpleForm extends Component {
           {
             id: "a9",
             options: [
-                {value: 0, label: "not at all", trigger: "q10"},
-                {value: 1, label: "a little bit", trigger: "q10"},
-                {value: 2, label: "moderately", trigger: "q10"},
-                {value: 3, label: "quite a bit", trigger: "q10"},
-                {value: 4, label: "extremely", trigger: "q10"}
+                {value: 0, label: "Not at all", trigger: "q10"},
+                {value: 1, label: "A little bit", trigger: "q10"},
+                {value: 2, label: "Moderately", trigger: "q10"},
+                {value: 3, label: "Quite a bit", trigger: "q10"},
+                {value: 4, label: "Extremely", trigger: "q10"}
             ]
           },
           {
@@ -475,11 +467,11 @@ class SimpleForm extends Component {
           {
             id: "a10",
             options: [
-                {value: 0, label: "not at all", trigger: "q11"},
-                {value: 1, label: "a little bit", trigger: "q11"},
-                {value: 2, label: "moderately", trigger: "q11"},
-                {value: 3, label: "quite a bit", trigger: "q11"},
-                {value: 4, label: "extremely", trigger: "q11"}
+                {value: 0, label: "Not at all", trigger: "q11"},
+                {value: 1, label: "A little bit", trigger: "q11"},
+                {value: 2, label: "Moderately", trigger: "q11"},
+                {value: 3, label: "Quite a bit", trigger: "q11"},
+                {value: 4, label: "Extremely", trigger: "q11"}
             ]
           },
           {
@@ -490,11 +482,11 @@ class SimpleForm extends Component {
           {
             id: "a11",
             options: [
-                {value: 0, label: "not at all", trigger: "q12"},
-                {value: 1, label: "a little bit", trigger: "q12"},
-                {value: 2, label: "moderately", trigger: "q12"},
-                {value: 3, label: "quite a bit", trigger: "q12"},
-                {value: 4, label: "extremely", trigger: "q12"}
+                {value: 0, label: "Not at all", trigger: "q12"},
+                {value: 1, label: "A little bit", trigger: "q12"},
+                {value: 2, label: "Moderately", trigger: "q12"},
+                {value: 3, label: "Quite a bit", trigger: "q12"},
+                {value: 4, label: "Extremely", trigger: "q12"}
             ]
           },
           {
@@ -505,11 +497,11 @@ class SimpleForm extends Component {
                     {
             id: "a12",
             options: [
-                {value: 0, label: "not at all", trigger: "q13"},
-                {value: 1, label: "a little bit", trigger: "q13"},
-                {value: 2, label: "moderately", trigger: "q13"},
-                {value: 3, label: "quite a bit", trigger: "q13"},
-                {value: 4, label: "extremely", trigger: "q13"}
+                {value: 0, label: "Not at all", trigger: "q13"},
+                {value: 1, label: "A little bit", trigger: "q13"},
+                {value: 2, label: "Moderately", trigger: "q13"},
+                {value: 3, label: "Quite a bit", trigger: "q13"},
+                {value: 4, label: "Extremely", trigger: "q13"}
             ]
           },
           {
@@ -520,11 +512,11 @@ class SimpleForm extends Component {
           {
             id: "a13",
             options: [
-                {value: 0, label: "not at all", trigger: "q14"},
-                {value: 1, label: "a little bit", trigger: "q14"},
-                {value: 2, label: "moderately", trigger: "q14"},
-                {value: 3, label: "quite a bit", trigger: "q14"},
-                {value: 4, label: "extremely", trigger: "q14"}
+                {value: 0, label: "Not at all", trigger: "q14"},
+                {value: 1, label: "A little bit", trigger: "q14"},
+                {value: 2, label: "Moderately", trigger: "q14"},
+                {value: 3, label: "Quite a bit", trigger: "q14"},
+                {value: 4, label: "Extremely", trigger: "q14"}
             ]
           },
           {
@@ -535,11 +527,11 @@ class SimpleForm extends Component {
           {
             id: "a14",
             options: [
-                {value: 0, label: "not at all", trigger: "q15"},
-                {value: 1, label: "a little bit", trigger: "q15"},
-                {value: 2, label: "moderately", trigger: "q15"},
-                {value: 3, label: "quite a bit", trigger: "q15"},
-                {value: 4, label: "extremely", trigger: "q15"}
+                {value: 0, label: "Not at all", trigger: "q15"},
+                {value: 1, label: "A little bit", trigger: "q15"},
+                {value: 2, label: "Moderately", trigger: "q15"},
+                {value: 3, label: "Quite a bit", trigger: "q15"},
+                {value: 4, label: "Extremely", trigger: "q15"}
             ]
           },
           {
@@ -550,11 +542,11 @@ class SimpleForm extends Component {
           {
             id: "a15",
             options: [
-                {value: 0, label: "not at all", trigger: "q16"},
-                {value: 1, label: "a little bit", trigger: "q16"},
-                {value: 2, label: "moderately", trigger: "q16"},
-                {value: 3, label: "quite a bit", trigger: "q16"},
-                {value: 4, label: "extremely", trigger: "q16"}
+                {value: 0, label: "Not at all", trigger: "q16"},
+                {value: 1, label: "A little bit", trigger: "q16"},
+                {value: 2, label: "Moderately", trigger: "q16"},
+                {value: 3, label: "Quite a bit", trigger: "q16"},
+                {value: 4, label: "Extremely", trigger: "q16"}
             ]
           },
           {
@@ -565,11 +557,11 @@ class SimpleForm extends Component {
         {
             id: "a16",
             options: [
-                {value: 0, label: "not at all", trigger: "q17"},
-                {value: 1, label: "a little bit", trigger: "q17"},
-                {value: 2, label: "moderately", trigger: "q17"},
-                {value: 3, label: "quite a bit", trigger: "q17"},
-                {value: 4, label: "extremely", trigger: "q17"}
+                {value: 0, label: "Not at all", trigger: "q17"},
+                {value: 1, label: "A little bit", trigger: "q17"},
+                {value: 2, label: "Moderately", trigger: "q17"},
+                {value: 3, label: "Quite a bit", trigger: "q17"},
+                {value: 4, label: "Extremely", trigger: "q17"}
             ]
           },
           {
@@ -580,11 +572,11 @@ class SimpleForm extends Component {
           {
             id: "a17",
             options: [
-                {value: 0, label: "not at all", trigger: "q18"},
-                {value: 1, label: "a little bit", trigger: "q18"},
-                {value: 2, label: "moderately", trigger: "q18"},
-                {value: 3, label: "quite a bit", trigger: "q18"},
-                {value: 4, label: "extremely", trigger: "q18"}
+                {value: 0, label: "Not at all", trigger: "q18"},
+                {value: 1, label: "A little bit", trigger: "q18"},
+                {value: 2, label: "Moderately", trigger: "q18"},
+                {value: 3, label: "Quite a bit", trigger: "q18"},
+                {value: 4, label: "Extremely", trigger: "q18"}
             ]
           },
           {
@@ -595,11 +587,11 @@ class SimpleForm extends Component {
           {
             id: "a18",
             options: [
-                {value: 0, label: "not at all", trigger: "q19"},
-                {value: 1, label: "a little bit", trigger: "q19"},
-                {value: 2, label: "moderately", trigger: "q19"},
-                {value: 3, label: "quite a bit", trigger: "q19"},
-                {value: 4, label: "extremely", trigger: "q19"}
+                {value: 0, label: "Not at all", trigger: "q19"},
+                {value: 1, label: "A little bit", trigger: "q19"},
+                {value: 2, label: "Moderately", trigger: "q19"},
+                {value: 3, label: "Quite a bit", trigger: "q19"},
+                {value: 4, label: "Extremely", trigger: "q19"}
             ]
           },
           {
@@ -610,11 +602,11 @@ class SimpleForm extends Component {
           {
             id: "a19",
             options: [
-                {value: 0, label: "not at all", trigger: "q20"},
-                {value: 1, label: "a little bit", trigger: "q20"},
-                {value: 2, label: "moderately", trigger: "q20"},
-                {value: 3, label: "quite a bit", trigger: "q20"},
-                {value: 4, label: "extremely", trigger: "q20"}
+                {value: 0, label: "Not at all", trigger: "q20"},
+                {value: 1, label: "A little bit", trigger: "q20"},
+                {value: 2, label: "Moderately", trigger: "q20"},
+                {value: 3, label: "Quite a bit", trigger: "q20"},
+                {value: 4, label: "Extremely", trigger: "q20"}
             ]
           },
           {
@@ -625,13 +617,21 @@ class SimpleForm extends Component {
           {
             id: "a20",
             options: [
-                {value: 0, label: "not at all", trigger: "pcl-5-thank-you"},
-                {value: 1, label: "a little bit", trigger: "pcl-5-thank-you"},
-                {value: 2, label: "moderately", trigger: "pcl-5-thank-you"},
-                {value: 3, label: "quite a bit", trigger: "pcl-5-thank-you"},
-                {value: 4, label: "extremely", trigger: "pcl-5-thank-you"}
+                {value: 0, label: "Not at all", trigger: "pcl-5-thank-you"},
+                {value: 1, label: "A little bit", trigger: "pcl-5-thank-you"},
+                {value: 2, label: "Moderately", trigger: "pcl-5-thank-you"},
+                {value: 3, label: "Quite a bit", trigger: "pcl-5-thank-you"},
+                {value: 4, label: "Extremely", trigger: "pcl-5-thank-you"}
             ]
           },
+        // {
+        //     id: "pcl-5-end-message",
+        //     // message: "test end",
+        //     // end: true,
+        //     component: <Post />,
+        //     asMessage: true,
+        //     trigger: "pcl-5-thank-you",
+        // },
           {
             id: "pcl-5-thank-you",
             message: "thank you - your score report will be emailed to you in the next 24 hours. We are working on an auto-score option right now.",
@@ -809,59 +809,59 @@ class SimpleForm extends Component {
             ]
           },
 
-          // {
-          //   id:"q-firstname", 
-          //   message:"What is your first name?", 
-          //   trigger:"firstname",
-          // },
-          // {
-          //   id:"firstname", 
-          //   user: true,
-          //   trigger:"q-lastname"
-          // },
-          // {
-          //   id:"q-lastname", 
-          //   message:"What is your last name?", 
-          //   trigger:"lastname",
-          // },
-          // {
-          //   id:"lastname", 
-          //   user: true,
-          //   trigger:"q-email"
-          // },
-          // {
-          //   id:"q-email", 
-          //   message:"Finally. what is your email?", 
-          //   trigger:"email",
-          // },
-          // {
-          //   id:"email", 
-          //   user: true,
-          //   trigger:"q-submit"
-          // },
-          // {
-          //   id:"q-submit", 
-          //   message:"Do you wish to submit?", 
-          //   trigger:"submit"
-          // },
-          // {
-          //   id:"submit", 
-          //   options:[
-          //   {value:"y", label:"Yes", trigger:"end-message"},
-          //   {value:"n", label:"No", trigger:"no-submit"},
-          //   ] 
-          // },
-          // {
-          //         id: "no-submit",
-          //         message:"Your information was not submitted.", 
-          //         end: true,
-          //      },
-          //           {
-          //         id: "end-message",
-          //         component: <Post />,
-          //         asMessage: true,
-          //         end: true,
-          //      },
+          {
+            id:"q-firstname", 
+            message:"What is your first name?", 
+            trigger:"firstname",
+          },
+          {
+            id:"firstname", 
+            user: true,
+            trigger:"q-lastname"
+          },
+          {
+            id:"q-lastname", 
+            message:"What is your last name?", 
+            trigger:"lastname",
+          },
+          {
+            id:"lastname", 
+            user: true,
+            trigger:"q-submit"
+          },
+        //   {
+        //     id:"q-email", 
+        //     message:"Finally. what is your email?", 
+        //     trigger:"email",
+        //   },
+        //   {
+        //     id:"email", 
+        //     user: true,
+        //     trigger:"q-submit"
+        //   },
+          {
+            id:"q-submit", 
+            message:"Do you wish to submit?", 
+            trigger:"submit"
+          },
+          {
+            id:"submit", 
+            options:[
+            {value:"y", label:"Yes", trigger:"end-message"},
+            {value:"n", label:"No", trigger:"no-submit"},
+            ] 
+          },
+          {
+                  id: "no-submit",
+                  message:"Your information was not submitted.", 
+                  end: true,
+               },
+                    {
+                  id: "end-message",
+                  component: <Post />,
+                  asMessage: true,
+                  end: true,
+               },
         ]}
       />
         
