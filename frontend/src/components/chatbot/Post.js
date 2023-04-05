@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react"
 // import { useInsertUserChatLogMutation } from "/@/graphql/generated/types"
 import { gql } from "@apollo/client";
 import { useMutation } from "@apollo/client";
-import nhost from '../../nhostClient'
+// import nhost from '../../nhostClient'
 
 const ADD_CHAT = gql `
     mutation($chat: jsonb, $user_id: uuid) {
@@ -45,7 +45,7 @@ const Post = ({ steps }) => {
 //   const [lastname, setLastname] = useState(steps?.lastname.value || "")
 //   const [submit, setSubmit] = useState(steps?.submit.value || "")
 
-  let current_session_user_id = nhost.auth.getUser().id
+//   let current_session_user_id = nhost.auth.getUser().id
   
   useEffect(() => {
     setA1(steps?.a1.value)
@@ -179,7 +179,10 @@ const Post = ({ steps }) => {
   useEffect(() => {
     // const total_score = a1 + a2 + a3 + a4 + a5 + a6 + a7 + a8 + a9 + a10 + a11 + a12 + a13 + a14 + a15 + a16 + a17 + a18 + a19 + a20
     //TO DO: need to grab the user id through a graphql query to database by maybe signin email or some other session variable? check hasura console 
-    addChatLog({variables: {chat: {a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20}, user_id: current_session_user_id}});
+    //CHANGED
+    // addChatLog({variables: {chat: {a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20}, user_id: current_session_user_id}});
+    addChatLog({variables: {chat: {a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, a11, a12, a13, a14, a15, a16, a17, a18, a19, a20}, user_id: null}});
+    console.log(addChatLogResult)
   }, [steps?.a20.value])
 
 //   if (addChatLogResult.loading) {

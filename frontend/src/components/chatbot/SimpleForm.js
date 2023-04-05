@@ -38,7 +38,12 @@ import Post from "./Post";
   
   //   return answers;
   // }
-  
+
+const config ={
+    width: "100%",
+    height: "500px", 
+  };
+
 class SimpleForm extends Component {
   // answers = createAnswerVariables()
   // questions = createQuestionVariables()
@@ -865,6 +870,7 @@ class SimpleForm extends Component {
         //           end: true,
         //        },
         ]}
+        {...config}
       />
         
         );

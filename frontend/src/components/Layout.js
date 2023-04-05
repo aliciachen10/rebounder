@@ -43,7 +43,7 @@ const Layout = () => {
             <img src={process.env.PUBLIC_URL + 'rebound-small.png'} alt="logo" height="40"/>
           </Link>
 
-          <Menu as="div" className={styles.menu}>
+          {/* <Menu as="div" className={styles.menu}>
             <Menu.Button className={styles['menu-button']}>
               <Avatar src={user?.avatarUrl} alt={user?.displayName} />
               <ChevronDownIcon />
@@ -87,13 +87,14 @@ const Layout = () => {
                 </div>
               </Menu.Items>
             </Transition>
-          </Menu>
+          </Menu> */}
         </div>
       </header>
 
       <main className={styles.main}>
         <div className={styles['main-container']}>
-          <Outlet context={{ user }} />
+          {/* <Outlet context={{ user }} /> */}
+          <Outlet />
         </div>
       </main>
     </div>
