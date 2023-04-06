@@ -10,7 +10,7 @@ const Dashboard = () => {
   return (
     <>
       <Helmet>
-        <title>Dashboard - Rebound Health</title>
+        <title>Meet Rebound</title>
       </Helmet>
 
       <div>
