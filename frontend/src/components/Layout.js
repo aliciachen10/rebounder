@@ -97,6 +97,7 @@ const Layout = () => {
           <Outlet />
         </div>
 
+
         Please note: This content is based on the leading evidence-based methods for healing from trauma, and you can use it by itself or in conjunction with therapy. This is wellbeing content, not healthcare: we don't provide medical advice, medical care, or official diagnoses, and any guidance you receive from your therapist, doctor, or other medical professional takes precedence.
           <br/>
         If at any point you feel suicidal or have any thoughts of hurting yourself or others, please stop this program and immediately seek assistance by calling 911 or the equivalent emergency services number in your local area. Keep yourself safe!

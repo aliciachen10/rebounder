@@ -14,19 +14,17 @@ const Dashboard = () => {
       </Helmet>
 
       <div>
-        <h2 className={styles.title}>Dashboard</h2>
+        <h2 className={styles.title}>Meet Rebound</h2>
 
         <p className={styles['welcome-text']}>
-          Welcome.
           {/* Welcome, {user?.metadata?.firstName || 'stranger'}{' '} */}
-          <span role="img" alt="hello">
+          {/* <span role="img" alt="hello">
             👋
-          </span>
+          </span> */}
         </p>
-        <p>Thanks for showing up! We'd love for you to interact with our coach. </p>
+        <p>Rebound helps you heal from trauma safely and on your own terms. We take the leading evidence-based methods and make them accessible and easy to use. If you've experienced trauma, chat with our Bot to learn techniques clinically shown to heal symptoms and help you live your happiest life.</p>
         <p>Questions or feedback? Please feel free to <u><a href="https://hellorebound.com/contact/">contact us.</a></u></p>
-        <br/>
-        <br/>
+
         <SimpleForm />
 
         {/* <p className={styles['info-text']}>

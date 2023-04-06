@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import ChatBot from "react-simple-chatbot";
 import Post from "./Post";
+import { ThemeProvider } from 'styled-components';
 
   // function createQuestionVariables(){
   //   var questions = [];
@@ -42,6 +43,24 @@ import Post from "./Post";
 const config ={
     width: "100%",
     height: "500px", 
+    botAvatar: "rebound-logo.png",
+    headerTitle: "Rebound Health Chat"
+  };
+
+//   #4d7e67
+// #90c290
+// #badaba
+
+ const theme = {
+    background: '#f5f8fb',
+    fontFamily: 'Helvetica Neue',
+    headerBgColor: '#4d7e67',
+    headerFontColor: '#fff',
+    headerFontSize: '15px',
+    botBubbleColor: '#4d7e67',
+    botFontColor: '#fff',
+    userBubbleColor: '#fff',
+    userFontColor: '#4a4a4a',
   };
 
 class SimpleForm extends Component {
@@ -50,7 +69,7 @@ class SimpleForm extends Component {
 
   render() {
     return (
-      
+      <ThemeProvider theme={theme}>
       <ChatBot 
         steps={[
             {
@@ -179,7 +198,7 @@ class SimpleForm extends Component {
     {id: "yes-symptoms-options",
     options: [
       {value: 1, label: "explore techniques for healing from trauma", trigger: "reprocessing-0"},
-      {value: 2, label: "help me feel less anxious or less numb right now", trigger: "not-emergency-options"}
+      {value: 2, label: "help me feel less anxious or less numb right now", trigger: "not-emergency"}
     ] 
     },
     
@@ -294,7 +313,7 @@ class SimpleForm extends Component {
   
               You can do this in the box below, or if you’d prefer, take a piece of paper and write it down on your own.
               
-              When you’re done, take a deep breath and hit "I'm finished."`,
+              When you’re done, take a deep breath and press enter, and then hit "I'm finished."`,
               trigger: "writing-submission-box"
             },
             {
@@ -307,7 +326,7 @@ class SimpleForm extends Component {
               message: `Today, you’ll be diving further into the details of your trauma. The purpose of this is to help your mind craft a better narrative around what happened so it can learn to handle the memory without fear.
               
               For the next 20 minutes, write down the story of your trauma again, either in this box here or in a journal, a Word document, or a piece of paper. Today, try to focus on the details. Write down as much as you remember—what exactly happened, where were you, who was there, how were you feeling, what were you thinking about. Try to be as specific as possible.
-              When you're done, take a deep breath and hit "I'm finished."`,
+              When you're done, take a deep breath and press enter, and then hit "I'm finished."`,
               trigger: "writing-submission-box"
             },
             {
@@ -322,7 +341,7 @@ class SimpleForm extends Component {
             },
             {
               id: "reprocessing-3-2",
-              message: `When you’re done, take a deep breath and hit "I'm finished."`,
+              message: `When you’re done, take a deep breath and press enter, and then hit "I'm finished."`,
               trigger: "writing-submission-box"
             },
             {
@@ -334,7 +353,7 @@ class SimpleForm extends Component {
               id: "reprocessing-4-1",
               message: `As always, try to be as specific as possible. The deeper you are able to explore what happened and how you think and feel about it, the more you will be able to heal.
   
-              When you’re done, take a deep breath and hit "I'm finished."`,
+              When you’re done, take a deep breath and press enter, then hit "I'm finished."`,
               trigger: "writing-submission-box"
             },
             {
@@ -582,6 +601,7 @@ class SimpleForm extends Component {
   }
         {...config}
       />
+      </ThemeProvider>
         
         );
       }
